@@ -10,7 +10,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            HENRYs  <code>src/App.js</code> and save to reload.
+            Camacho's  <code>src/App.js</code> and save to reload.
           </p>
           <a
             className="App-link"
@@ -20,7 +20,7 @@ class App extends Component {
           >
             Learn React
           </a>
-          <ChildComponent/>
+          <ChildComponent />
         </header>
       </div>
     );
