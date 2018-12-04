@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ChildComponent from './component/ChildComponent.js';
+import ChildComponent from './components/ChildComponent/ChildComponent.js';
 
 class App extends Component {
   render() {
