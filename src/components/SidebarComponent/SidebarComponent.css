@@ -1,0 +1,17 @@
+/* Sidebar CSS */
+
+.sidebar {
+    height: 100vh;
+    background-color:black;
+}
+
+.logo-item {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.menu-item {
+    margin-bottom: 10px;
+    font-size: 22px;
+    cursor: pointer;
+}

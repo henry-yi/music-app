@@ -1,0 +1,14 @@
+/* MenuItem CSS */
+
+.menu-item-name {
+    margin: auto;
+    color: wheat;
+}
+
+.menu-item-name:hover {
+    color:white
+}
+
+.selected {
+    color: goldenrod;
+}
