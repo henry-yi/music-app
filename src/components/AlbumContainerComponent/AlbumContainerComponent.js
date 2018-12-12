@@ -19,9 +19,9 @@ class AlbumContainerComponent extends Component {
 
         return (
             <div className="album-container-div">
-                {albumList.map(result => (
+                {this.props.results.map(result => (
                     <AlbumComponent
-                        imgsrc={result.imgsrc}
+                        imgsrc={result.img}
                         title={result.title}
                         artist={result.artist}
                     />

@@ -2,8 +2,51 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ChildComponent from './components/ChildComponent/ChildComponent.js';
+import AlbumContainerComponent from './components/AlbumContainerComponent/AlbumContainerComponent.js';
+
+var Spotify = require('node-spotify-api');
+
+
+
 
 class App extends Component {
+  state = {
+    searchResults: []
+  };
+
+  cleanResults = (albumObj) => {
+    let albumList = albumObj.albums.items;
+    let results = [];
+
+    const nAlbums = 10;
+
+    for (var i = 0; i < (nAlbums < albumList.length ? nAlbums : albumList.length); i++) {
+      let result = {
+        title: albumList[i].name,
+        artist: albumList[i].artists[0].name,
+        img: albumList[i].images[0].url
+      };
+      results.push(result);
+    }
+
+    return results;
+  }
+
+  componentDidMount() {
+    spotify
+      .search({ type: 'album', query: 'rolling stones' })
+      .then((response) => {
+        console.log(response);
+        console.log(this);
+        this.setState({
+          searchResults: this.cleanResults(response)
+        });
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+  }
+
   render() {
     return (
       <div className="App">
@@ -21,6 +64,9 @@ class App extends Component {
             Learn React
           </a>
           <ChildComponent />
+          <AlbumContainerComponent
+            results={this.state.searchResults}
+          />
         </header>
       </div>
     );
