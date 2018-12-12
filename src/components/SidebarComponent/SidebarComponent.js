@@ -13,23 +13,17 @@ class SidebarComponent extends Component {
         return (
             <div className="col-6">
                 <div className="sidebar container">
-                    <div className="row logo-item">
-                        <LogoComponent />
-                    </div>                
-                    <div className="row menu-item">
-                        <MenuItemComponent handler={this.menuClickHandler} active={this.state.activeMenu} menuName="Search"/>
-                    </div>
-                    <div className="row menu-item">
-                        <MenuItemComponent handler={this.menuClickHandler} active={this.state.activeMenu} menuName="Home"/>
-                    </div>                
+                    <LogoComponent />             
+                    <MenuItemComponent handler={this.menuClickHandler} active={this.state.activeMenu} menuName="Search"/>
+                    <MenuItemComponent handler={this.menuClickHandler} active={this.state.activeMenu} menuName="Home"/>            
                 </div>
             </div>
         );
     }
 
-    menuClickHandler = (event) => {
+    menuClickHandler = (menuName) => {
         this.setState({
-            activeMenu: this.props.menuName
+            activeMenu: menuName
         })
     }    
 }

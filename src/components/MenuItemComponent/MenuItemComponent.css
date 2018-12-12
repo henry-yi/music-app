@@ -1,14 +1,23 @@
 /* MenuItem CSS */
-
-.menu-item-name {
-    margin: auto;
-    color: wheat;
+.menu-item {
+    color: dimgrey;
+    border-left:4px solid black;
 }
 
-.menu-item-name:hover {
+.menu-item:hover {
     color:white
 }
 
-.selected {
-    color: goldenrod;
+.menu-item.selected {
+    color: white;
+    border-left:4px solid gold;
+}
+
+.menu-icon {
+    padding-top: 8px;
+}
+
+.menu-link {
+    text-align: left;
+    padding-top: 4px;
 }
