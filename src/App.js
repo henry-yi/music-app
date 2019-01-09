@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import AlbumContainerComponent from './components/AlbumContainerComponent/AlbumContainerComponent.js';
+import PlayButtonComponent from './components/PlayButtonComponent/PlayButtonComponent.js';
 
 var Spotify = require('node-spotify-api');
-
 
 class App extends Component {
   state = {
@@ -63,6 +63,7 @@ class App extends Component {
           <AlbumContainerComponent
             results={this.state.searchResults}
           />
+          <PlayButtonComponent/>
         </header>
       </div>
     );

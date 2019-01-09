@@ -1,0 +1,8 @@
+.play-button {
+  height: 0px;
+  width: 0px;
+  border-left: solid darkgreen 30px;
+  border-top: solid transparent 30px;
+  border-bottom: solid transparent 30px;
+  background-color: transparent;
+}
