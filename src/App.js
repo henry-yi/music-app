@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ChildComponent from './components/ChildComponent/ChildComponent.js';
 import AlbumContainerComponent from './components/AlbumContainerComponent/AlbumContainerComponent.js';
 
 var Spotify = require('node-spotify-api');
-
-
 
 
 class App extends Component {
@@ -63,7 +60,6 @@ class App extends Component {
           >
             Learn React
           </a>
-          <ChildComponent />
           <AlbumContainerComponent
             results={this.state.searchResults}
           />
