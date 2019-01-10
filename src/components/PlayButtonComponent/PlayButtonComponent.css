@@ -6,3 +6,10 @@
   border-bottom: solid transparent 30px;
   background-color: transparent;
 }
+
+.pause-button {
+  height: 40px;
+  width: 40px;
+  border-left: solid darkgreen 10px;
+  border-right: solid darkgreen 10px;
+}
