@@ -3,8 +3,8 @@ import './PlayButtonComponent.css';
 
 class PlayButtonComponent extends Component {
     state = {
-        status: "play-button",
-        disabled: "pause-button"
+        status: "play-button playpause",
+        disabled: "pause-button playpause"
     };
 
     changeState = () => {
