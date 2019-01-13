@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import AlbumContainerComponent from './components/AlbumContainerComponent/AlbumContainerComponent.js';
 import PlayButtonComponent from './components/PlayButtonComponent/PlayButtonComponent.js';
+import SongImageComponent from './components/SongImageComponent/SongImageComponent.js';
 
 var Spotify = require('node-spotify-api');
 
@@ -64,6 +65,10 @@ class App extends Component {
             results={this.state.searchResults}
           />
           <PlayButtonComponent/>
+          <SongImageComponent
+            src="/assets/images/1-Shine-On-You-Crazy-Diamond-pts1-5.jpg"
+            alt="1-Shine on You Crazy Diamond"
+            />
         </header>
       </div>
     );
