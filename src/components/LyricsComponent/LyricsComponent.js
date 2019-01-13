@@ -4,7 +4,7 @@ import './LyricsComponent.css';
 class LyricsComponent extends Component {
     render () {
         return (
-            <p>{this.props.text}</p>
+            <p className="lyrics-element">{this.props.text}</p>
         );
     }
 }

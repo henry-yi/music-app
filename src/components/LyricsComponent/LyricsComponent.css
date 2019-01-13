@@ -1,0 +1,10 @@
+.lyrics-element {
+    width: 400px;
+    font-size: 25px;
+    -webkit-animation: fadein 2s;
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
