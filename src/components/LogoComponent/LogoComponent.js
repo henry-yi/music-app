@@ -4,7 +4,7 @@ import './LogoComponent.css';
 function LogoComponent() {
     return (
         <div className="row logo-item">
-            <div className="col-12">
+            <div className="col-1">
                 <div className="logo">
                     Albumination
                 </div>

@@ -1,8 +1,11 @@
 /* Sidebar CSS */
 
-.sidebar {
+.sidebar-container {
     height: 100vh;
     background-color:black;
+    width: 250px;
+    margin-left: 0px;
+    padding-left: 0px;
 }
 
 .logo-item {

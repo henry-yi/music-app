@@ -11,12 +11,10 @@ class SidebarComponent extends Component {
 
     render() {
         return (
-            <div className="col-6">
-                <div className="sidebar container">
-                    <LogoComponent />             
-                    <MenuItemComponent handler={this.menuClickHandler} active={this.state.activeMenu} menuName="Search"/>
-                    <MenuItemComponent handler={this.menuClickHandler} active={this.state.activeMenu} menuName="Home"/>            
-                </div>
+            <div className="sidebar-container col-1">
+                <LogoComponent />             
+                <MenuItemComponent handler={this.menuClickHandler} active={this.state.activeMenu} menuName="Search"/>
+                <MenuItemComponent handler={this.menuClickHandler} active={this.state.activeMenu} menuName="Home"/>            
             </div>
         );
     }
