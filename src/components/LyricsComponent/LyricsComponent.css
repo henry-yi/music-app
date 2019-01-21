@@ -1,7 +1,12 @@
 .lyrics-element {
     width: 400px;
-    font-size: 25px;
+    font-size: 22px;
+    color: white;
     -webkit-animation: fadein 2s;
+    position: absolute;
+    top: 10px;
+    left: calc(50% - 200px);
+    margin: auto;
 }
 
 @-webkit-keyframes fadein {

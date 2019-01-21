@@ -6,6 +6,7 @@ import Player from './pages/Player/Player.js';
 
 var Spotify = require('node-spotify-api');
 
+
 class App extends Component {
   state = {
     searchResults: []
@@ -47,24 +48,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Camacho's  <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
           <AlbumContainerComponent
             results={this.state.searchResults}
           />
           <Player />
-        </header>
       </div>
     );
   }
