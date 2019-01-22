@@ -40,7 +40,7 @@
     <script src="https://sdk.scdn.co/spotify-player.js"></script>
     <script type="text/javascript">
         window.onSpotifyWebPlaybackSDKReady = () => {
-            const token = 'BQDaQOKM3hn0jxOuwPhMizmvwLR0GaqiVPEZXgmZN4h9-52IJoM3UPtw9WuuoZ23vu2yBwDviTeZpxRDs8NAZDuKdm_EQbesoZGrjwlpNj7jqfRYswrsKt8-Vn4j7WEbBwyn-Pd6WyIlXZJHq_80wEciCbHuRTOTbJ3ZhW2rESM8';
+            const token = 'BQAE_T5oB2dKs-7sm2viAiL8iIctVVTqzrdtpobzo1WNyHKw-RuH-8SOnP-yIxRQ86kLrJc8PlIG2AUyJE_SNu1YYwZH6nMvxgKlwz6GiZd2SQv0xjqP1s3Y5pPioZzyXIz2YsbHrjpvinbx7XSuDGBGOXoCmSX9CRA4zJLAJb5U';
             const player = new window.Spotify.Player({
                 name: 'Web Playback SDK Quick Start Player',
                 getOAuthToken: cb => { cb(token); }
@@ -58,6 +58,10 @@
             // Ready
             player.addListener('ready', ({ device_id }) => {
                 console.log('Ready with Device ID', device_id);
+                play({
+                  playerInstance: player,
+                  spotify_uri: 'spotify:track:7ccI9cStQbQdystvc6TvxD',
+                });
             });
 
             // Not Ready
@@ -67,8 +71,6 @@
 
             // Connect to the player!
             player.connect();
-
-            console.log("player: ", player);
 
             const play = ({
             spotify_uri,
@@ -90,12 +92,6 @@
               });
             });
           };
-          setTimeout(function() {
-          play({
-            playerInstance: player,
-            spotify_uri: 'spotify:track:7ccI9cStQbQdystvc6TvxD',
-          });
-        },2000);
         }
     </script>
 
