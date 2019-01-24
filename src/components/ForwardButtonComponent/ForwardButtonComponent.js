@@ -1,26 +1,17 @@
 import React, { Component } from 'react';
-import './PlayButtonComponent.css';
+import './ForwardButtonComponent.css';
 
-class PlayButtonComponent extends Component {
-    state = {
-        status: "play-button playpause",
-        disabled: "pause-button playpause"
-    };
-
-    changeState = () => {
-        let tempStatus = this.state.status;
-        this.setState({
-            status: this.state.disabled,
-            disabled: tempStatus
-        })
+class ForwardButtonComponent extends Component {
+    forwardClick = () => {
+        console.log("forward clicked");
     }
 
     render() {
         return (
-          <div className={this.state.status} onClick={this.changeState}>
+          <div className="forwardButton" onClick={this.forwardClick}>
           </div>
         );
     }
 }
 
-export default PlayButtonComponent;
+export default ForwardButtonComponent;
