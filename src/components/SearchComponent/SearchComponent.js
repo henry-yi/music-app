@@ -2,18 +2,12 @@ import React, { Component } from 'react';
 import './SearchComponent.css';
 import AlbumContainerComponent from '../AlbumContainerComponent/AlbumContainerComponent.js';
 
-var Spotify = require('node-spotify-api');
-var spotify = new Spotify({
-  id: "422363845c7a48ff908af44f247ddca7",
-  secret: "ee10cf18b2184ef7974e05c13323212d"
-});
-
 class SearchComponent extends Component {
     state = {
         searchResults: []
     };
 
-    search = (event) => {
+    makeRequest = (event) => {
         if (!event.target.value) {
             this.setState({
                 searchResults: []
@@ -21,29 +15,31 @@ class SearchComponent extends Component {
             return;
         }
 
-        spotify
-        .search({ type: 'album', query: event.target.value })
-        .then((response) => {
-          this.setState({
-            searchResults: this.cleanResults(response)
-          });
-        })
-        .catch(function (err) {
-          console.log(err);
-        });        
+        const http = new XMLHttpRequest();
+        http.open('POST', 'http://127.0.0.1:3001/api/getData', true);
+        http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        http.send('query='+encodeURIComponent(event.target.value));
+
+        http.onreadystatechange = (e) => {
+            if (http.readyState===4 && http.status===200) {
+                this.setState({
+                    searchResults: this.cleanResults(JSON.parse(http.responseText))
+                });           
+            }
+        };
     }
 
     cleanResults(albumObj) {
-        let albumList = albumObj.albums.items;
+        let albumList = albumObj.tracks.items;
         let results = [];
     
         const nAlbums = 10;
     
         for (var i = 0; i < (nAlbums < albumList.length ? nAlbums : albumList.length); i++) {
           let result = {
-            title: albumList[i].name,
-            artist: albumList[i].artists[0].name,
-            img: albumList[i].images[0].url
+            title: albumList[i].album.name,
+            artist: albumList[i].album.artists[0].name,
+            img: albumList[i].album.images[0].url
           };
           results.push(result);
         }
@@ -54,7 +50,7 @@ class SearchComponent extends Component {
     render() {
         return (
             <div className="app-container col-11">
-                <input className="searchbox" type="text" placeholder="album title" onChange={this.search} autoFocus={true}></input>
+                <input className="searchbox" type="text" placeholder="album title" onChange={this.makeRequest} autoFocus={true}></input>
                 <div className="search-results">
                     Search for your album here
                 </div>
