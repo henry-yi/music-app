@@ -1,4 +1,4 @@
-.play-button {
+.forwardButton {
   height: 0px;
   width: 0px;
   border-left: solid darkgreen 30px;
@@ -6,22 +6,11 @@
   border-bottom: solid transparent 30px;
   background-color: transparent;
   opacity: 0.5;
-}
-
-.pause-button {
-  height: 60px;
-  width: 40px;
-  border-left: solid darkgreen 12px;
-  border-right: solid darkgreen 12px;
-}
-
-.playpause {
-  opacity: 0.5;
   position: absolute;
   bottom: 10px;
   left: 50%;
 }
 
-.playpause:hover {
+.forwardButton:hover {
   opacity: 1;
 }

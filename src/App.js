@@ -2,20 +2,27 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import AlbumContainerComponent from './components/AlbumContainerComponent/AlbumContainerComponent.js';
-import PlayButtonComponent from './components/PlayButtonComponent/PlayButtonComponent.js';
-import SongImageComponent from './components/SongImageComponent/SongImageComponent.js';
-import LyricsComponent from './components/LyricsComponent/LyricsComponent.js';
+import Player from './pages/Player/Player.js';
+import ForwardButtonComponent from './components/ForwardButtonComponent/ForwardButtonComponent.js';
 import SidebarComponent from './components/SidebarComponent/SidebarComponent.js'
 import SearchComponent from './components/SearchComponent/SearchComponent.js';
+
+var Spotify = require('node-spotify-api');
+
 
 class App extends Component {
   render() {
     return (
       <div className="App app-container">
+          {/* <AlbumContainerComponent
+            results={this.state.searchResults}
+          /> */}
         <div className="row">
           <SidebarComponent/>
           <SearchComponent/>        
         </div>
+          <Player />
+          <ForwardButtonComponent />
       </div>
     );
   }
