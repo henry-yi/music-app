@@ -7,7 +7,7 @@ class MenuItemComponent extends Component {
     render() {
         return (
             <div className={"row menu-item " + this.getClass()} onClick={()=>this.props.handler(this.props.menuName)}>
-                <div className="col-2 menu-icon">
+                <div className="col-1 menu-icon">
                     <GetIcon menuName={this.props.menuName}/>
                 </div>
                 <span className="col-8 menu-link">{this.props.menuName}</span>
