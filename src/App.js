@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import AlbumContainerComponent from './components/AlbumContainerComponent/AlbumContainerComponent.js';
 import Player from './pages/Player/Player.js';
+import ForwardButtonComponent from './components/ForwardButtonComponent/ForwardButtonComponent.js';
 
 var Spotify = require('node-spotify-api');
 
@@ -48,10 +49,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <AlbumContainerComponent
+          {/* <AlbumContainerComponent
             results={this.state.searchResults}
-          />
+          /> */}
           <Player />
+          <ForwardButtonComponent />
       </div>
     );
   }

@@ -8,7 +8,7 @@ class Player extends Component {
     render () {
         return (
             <div className="outer-player-div">
-                <PlayButtonComponent/>
+                {/* <PlayButtonComponent/> */}
                 <SongImageComponent
                     src="/assets/images/1-Shine-On-You-Crazy-Diamond-pts1-5.jpg"
                     alt="1-Shine on You Crazy Diamond"
