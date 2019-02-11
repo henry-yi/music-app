@@ -41,6 +41,8 @@
     <script type="text/javascript">
         window.onSpotifyWebPlaybackSDKReady = () => {
             
+            const token = 'BQDuqRxMwoP6TZfvB1vLjOWhdPeqTEuTIvfyuu7Vq2c-YkaR1WFtdQYlr9b5ybl_X0n7dtPNHQwwh7XyRT6bIWEb1HoB4DmWvmCpIP3igh3MhOHnvntxluXjhmTZ6FKAYOc3X4rc1GGRyjMf-zNa9NjD_9-VBwIs6Y3uhoFOPAF8';
+
             const player = new window.Spotify.Player({
                 name: 'Web Playback SDK Quick Start Player',
                 getOAuthToken: cb => { cb('BQDuqRxMwoP6TZfvB1vLjOWhdPeqTEuTIvfyuu7Vq2c-YkaR1WFtdQYlr9b5ybl_X0n7dtPNHQwwh7XyRT6bIWEb1HoB4DmWvmCpIP3igh3MhOHnvntxluXjhmTZ6FKAYOc3X4rc1GGRyjMf-zNa9NjD_9-VBwIs6Y3uhoFOPAF8'); }
