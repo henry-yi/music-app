@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './AlbumContainerComponent.css';
 import AlbumComponent from '../AlbumComponent/AlbumComponent.js';
+import Player from '../../pages/Player/Player.js';
 
 class AlbumContainerComponent extends Component {
     render() {
         return (
-            <div className="album-container-div">
-                {this.props.results.map(result => (
-                    <AlbumComponent
-                        imgsrc={result.img}
-                        title={result.title}
-                        artist={result.artist}
-                    />
-                ))}
-            </div>
+            <Router>
+                <div className="album-container-div">
+                    <Link to="/album">
+                       {this.props.results.map(result => (
+                            <AlbumComponent
+                                imgsrc={result.img}
+                                title={result.title}
+                                artist={result.artist}
+                            />
+                        ))}
+                    </Link>
+                    <Route path="/album" component={Player} />
+                </div>
+            </Router>
         );
     }
 }
