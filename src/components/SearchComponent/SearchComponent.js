@@ -43,7 +43,7 @@ class SearchComponent extends Component {
           };
           results.push(result);
         }
-    
+        
         return results;
     }
 

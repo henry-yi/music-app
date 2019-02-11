@@ -6,8 +6,9 @@ class AlbumContainerComponent extends Component {
     render() {
         return (
             <div className="album-container-div">
-                {this.props.results.map(result => (
+                {this.props.results.map((result, index) => (
                     <AlbumComponent
+                        key={index}
                         imgsrc={result.img}
                         title={result.title}
                         artist={result.artist}
