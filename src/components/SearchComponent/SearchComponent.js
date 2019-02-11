@@ -16,7 +16,7 @@ class SearchComponent extends Component {
         }
 
         const http = new XMLHttpRequest();
-        http.open('POST', 'http://127.0.0.1:3001/api/getData', true);
+        http.open('POST', 'http://127.0.0.1:8000/api/getData', true);
         http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         http.send('query='+encodeURIComponent(event.target.value));
 

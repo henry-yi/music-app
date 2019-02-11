@@ -19,12 +19,14 @@ class App extends Component {
   render() {
     return (
       <div className="App app-container">
+          <Router>
           {/* <AlbumContainerComponent
             results={this.state.searchResults}
           /> */}
-          <Search />
+              <Route exact path="/" component={Search} />
           {/*<Player />
           <ForwardButtonComponent /> */}
+          </Router>
       </div>
     );
   }
